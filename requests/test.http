@@ -1,0 +1,17 @@
+### Health Check
+GET http://localhost:3000/health
+
+### Get Users
+GET http://localhost:3000/api/users
+
+### Create User
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "name": "Jane Doe",
+    "age": 25
+}
+
+### Get User by ID
+GET http://localhost:3000/api/users/4ca0417e-7102-4319-b431-61773b6c5292
