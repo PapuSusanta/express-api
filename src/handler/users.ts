@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { User } from "../model/user.js";
+import { User } from "@/model/user";
 import { randomUUID } from "crypto";
 
 
