@@ -2,3 +2,6 @@
 
 ### Get user by ID
 GET {{Host}}/users/
+
+### testing error handling
+GET http://localhost:3000/health
