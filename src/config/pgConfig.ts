@@ -1,11 +1,5 @@
-/*
-* NODE MODULES
-*/
 import pkg from 'pg';
 
-/*
-* CUSTOM MODULES
-*/
 import { DB_CONFIG } from '@/config';
 
 const { Pool } = pkg;

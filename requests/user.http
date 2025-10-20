@@ -1,0 +1,4 @@
+@Host=http://localhost:3000/v1/api
+
+### Get user by ID
+GET {{Host}}/users/

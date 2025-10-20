@@ -1,7 +1,8 @@
-import { Request, Response } from "express";
-import { User } from "@/model/user";
+import { NextFunction, Request, Response } from "express";
 import { randomUUID } from "crypto";
 
+import { User } from "@/models/user";
+import { BadRequestError } from "@/errors/apiError";
 
 export function CreateUser(request: Request<{}, {}, User>, response: Response) {
     const user = request.body;
@@ -20,8 +21,11 @@ export function GetUsers(request: Request, response: Response) {
     response.status(200).json({ user: user });
 }
 
-export function GetUser(request: Request, response: Response) {
+export function GetUser(request: Request, response: Response, next: NextFunction) {
     const userId = request.params.id;
+    if (!userId) {
+        next(new BadRequestError("User ID is required"));
+    }
     const user: User = {
         id: userId,
         name: "Jane Doe",
